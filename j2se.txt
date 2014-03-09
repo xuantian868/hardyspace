@@ -1,0 +1,23 @@
+代理的概念与作用
+
+
+----注解Annotation
+@Override  //子类要重写父类的对应方法  java.lang.Override是个 marker annotation
+@Deprecated //不建议被使用的 java.lang.Deprecated是个 marker annotation
+@SuppressWarnings("unchecked") //抑制警告，（不检查）也可 "deprecation" @SuppressWarnings({"unchecked","deprecation"})
+
+//定义注解:当注解中的属性为value时，在对其复制时可以不指定属性的名称直接写属性值即可；除了value外的其他值都需要使用name=value的赋值方式即明确指定给谁赋值。
+
+public @interface AnnotationTest{
+	String value();
+}
+
+
+@annotationTest(value="word")
+public class AnnotationUse{
+
+	@annotationTest("word")
+	public void method(){
+	
+	}
+}
